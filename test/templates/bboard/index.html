@@ -1,0 +1,15 @@
+﻿{%extends "layout/basic.html"%}
+
+{% block content %}
+{% for bb in bbs %}
+{% for rez in rezz %}
+<div>
+  <img src= "{{rezz.image_rez.url}}" >
+    <p><a href="/bboard/{{bb.rubric.pk}}/">
+         {{bb.rubric.name}}</a></p>      
+    <p><b> {{bb.published|date:"d.m.Y H:i:s"}}</b></p>
+</div>
+    {% endfor %}
+    {% endfor %}
+
+{% endblock %}

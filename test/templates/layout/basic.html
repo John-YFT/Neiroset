@@ -1,0 +1,36 @@
+﻿{% load static %}
+
+<html>
+  <head>
+     <meta charset="UTF-8">
+     <title>{%block title%}Добавить{%endblock%}</title>
+
+
+  <link rel="stylesheet" type="text/css"
+   href="{% static 'bboard/style.css' %}">
+  </head>
+
+  <body>
+    <header>
+         <h1> <font face="Arial", size="24"> Коммунальные услуги </font> </h1>
+    </header>
+
+    <nav>
+
+
+       <a href="{% url 'add' %}">Добавить</a>  
+      {% for rubric in rubrics %}
+       <a href="/bboard/{{rubric.pk}}/">{{rubric.name}}</a>
+       {% endfor %}
+    </nav>
+
+
+    
+
+
+<section>
+    {% block content %}
+    {% endblock %} 
+</section>
+  </body>
+</html>

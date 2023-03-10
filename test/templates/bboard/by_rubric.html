@@ -1,0 +1,17 @@
+﻿{% extends "layout/basic.html" %}
+
+{% block title %} {{current_rubric.name}} {% endblock %}
+
+
+    <h2>Рубрика:{{current_rubric.name}}</h2>
+   {% block content %}
+    {% for bb in bbs %}
+    {% for rez in rezz %}
+
+    <div>
+      <img src= "{{rezz.image_rez.url}}" >
+       <p><b> {{bb.published|date:"d.m.Y H:i:s"}}</b></p>
+    </div>
+    {% endfor %}
+    {% endfor %}
+  {% endblock %}
